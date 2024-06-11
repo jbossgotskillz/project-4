@@ -66,19 +66,19 @@
             </div>        
         </div>
 
-        <div class="container">
+        <div class="container text-center">
             <py-script type="py" src="./py/main.py" config="./pyscript.json"></py-script>
         </div>
 
-        <mpy-config>
+<!--        <mpy-config>
             [files]
             "./main/main.py" = "./main.py"
-        </mpy-config>
+        </mpy-config>-->
         <script type="mpy">
             import main
         </script>
 
-        <div id="output"></div>
+<!--        <div id="output"></div>
 
     
 
@@ -95,7 +95,7 @@ y = np.random.randn(1000)
 fig, ax = plt.subplots()
 ax.scatter(x, y)
 pyscript.write('plot', fig)
-    </py-script>
+    </py-script>-->
 
 
 
