@@ -88,16 +88,16 @@
             import matplotlib.pyplot as plt
             import numpy as np
             
-            data = {'Alpha, Beta, & Charlie': 123381.38,
-                    'Battlefield Maps': 112591.43,
-                    'Explosives-4-Less': 112214.71,
-                    'Guns-R-Us': 109438.50,
-                    'Mission Control LLC': 104437.60,
-                    'Oscar Mike Combat Wear': 100934.30,
-                    'Proud Few Ltd': 103660.54,
-                    'Search and Recruit': 137351.96,
+            data = {'We Will Defend': 135841.99,
                     'Transport Depot': 103569.59,
-                    'We Will Defend': 135841.99}
+                    'Search and Recruit': 137351.96,
+                    'Proud Few Ltd': 108660.54,
+                    'Oscar Mike Combat Wear': 100934.30,
+                    'Mission Control LLC': 104437.60,
+                    'Guns-R-Us': 129438.50,
+                    'Explosives-4-Less': 116214.71,
+                    'Battlefield Maps': 112591.43,
+                    'Alpha, Beta, & Charlie': 123381.38}
             
             group_data = list(data.values())
             group_names = list(data.keys())
@@ -129,8 +129,8 @@
             
             ax.title.set(y=1.05)
             
-            ax.set(xlim=[-10000, 140000], xlabel='Total Revenue', ylabel='Company',
-                   title='Company Revenue')
+            ax.set(xlim=[-10000, 140000], xlabel='Stock Investment', ylabel='Company',
+                   title='2024 Stock Exchange')
             ax.xaxis.set_major_formatter(currency)
             ax.set_xticks([0, 25e3, 50e3, 75e3, 100e3, 125e3])
             fig.subplots_adjust(right=.1)
