@@ -72,17 +72,17 @@
 
         <!--where the graph is rendered-->
 
-        <div class="container text-center">
+        <!--<div class="container text-center">
             <py-script type="py" src="./py/main.py" config="./pyscript.json"></py-script>
         </div>
 
         <script type="mpy">
             import main
-        </script>
+        </script>-->
 
-        <div id="plot"></div>
 
         
+        <div id="plot" class="container mx-auto"></div>
         
         <py-script output="plot">
             import matplotlib.pyplot as plt
@@ -116,7 +116,7 @@
                     s = f'${x*1e-3:1.0f}K'
                 return s
             
-            fig, ax = plt.subplots(figsize=(4, 8))
+            fig, ax = plt.subplots(figsize=(8, 8))
             ax.barh(group_names, group_data)
             labels = ax.get_xticklabels()
             plt.setp(labels, rotation=45, horizontalalignment='right')
