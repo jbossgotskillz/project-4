@@ -10,7 +10,7 @@ Technologies: html, css, py, pyscript
 
 Improvements: spend more time writing Python code, use Django to build a website, try out different charting libraries
 
-<!DOCTYPE html>
+#
 
 <html lang="en">
 
