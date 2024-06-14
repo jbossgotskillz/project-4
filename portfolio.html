@@ -138,6 +138,113 @@
             pyscript.write('plot', fig)    
         </py-script>
 
+
+
+        <!--where the table is rendered-->
+
+        <section class="container mx-auto my-1">
+            <div id="table"></div>       
+            <div>
+                <h4><em>Legend</em></h4>
+                <p><strong>Company</strong> = the name of each company that the user is investing in</p>
+                <p><strong>Value</strong> = how much the user's stock is worth</p>
+                <p><strong>Shares</strong> = how many shares the user has with the company</p>
+                <p><strong>Deposits</strong> = how many stock sales were made</p>
+                <p><strong>Withdrawals</strong> = how many stock purchases were made</p>
+                <p><strong>Gain/Loss</strong> = the total gain or loss for the year compared to last year</p>
+            </div>
+        </section>
+
+
+
+        <py-script output="table">
+
+        import matplotlib.patches as patches
+                
+        fig, ax = plt.subplots(figsize=(10,6))
+        
+        rows = 10
+        cols = 6
+        
+        ax.set_ylim(-1, rows + 1)
+        ax.set_xlim(0, cols + .5)
+        
+        data = [
+                {'id': 'WWD', 'value': 135841.99, 'shares': 79, 'deposits': 13, 'withdrawals': 19, 'gain/loss': -15788.43},
+                {'id': 'TD', 'value': 103569.59, 'shares': 72, 'deposits': 10, 'withdrawals': 2, 'gain/loss': +18280.95},
+                {'id': 'S and R', 'value': 137351.96, 'shares': 47, 'deposits': 4, 'withdrawals': 8, 'gain/loss': -3109.64},
+                {'id': 'PF', 'value': 108660.54, 'shares': 99, 'deposits': 3, 'withdrawals': 17, 'gain/loss': 0},
+                {'id': 'OM', 'value': 100934.30, 'shares': 84, 'deposits': 21, 'withdrawals': 6, 'gain/loss': -23307.60},
+                {'id': 'MC', 'value': 104437.60, 'shares': 56, 'deposits': 9, 'withdrawals': 5, 'gain/loss': 0},
+                {'id': 'G-R-U', 'value': 129438.50, 'shares': 67, 'deposits': 24, 'withdrawals': 12, 'gain/loss': +25974.45},
+                {'id': 'E-4-L', 'value': 116214.71, 'shares': 91, 'deposits': 18, 'withdrawals': 11, 'gain/loss': +20662.78},
+                {'id': 'BFM', 'value': 112591.43, 'shares': 75, 'deposits': 14, 'withdrawals': 16, 'gain/loss': 0},
+                {'id': 'A, B, & C', 'value': 123381.38, 'shares': 70, 'deposits': 17, 'withdrawals': 20, 'gain/loss': -4712.33}
+        ]
+        
+        for row in range(rows):
+        
+            d = data[row]
+        
+            ax.text(x=.5, y=row, s=d['id'], va='center', ha='left')
+        
+            ax.text(x=2, y=row, s=d['value'], va='center', ha='right', weight='bold')
+        
+            ax.text(x=3, y=row, s=d['shares'], va='center', ha='right')
+        
+            ax.text(x=4, y=row, s=d['deposits'], va='center', ha='right')
+        
+            ax.text(x=5, y=row, s=d['withdrawals'], va='center', ha='right')
+        
+            ax.text(x=6, y=row, s=d['gain/loss'], va='center', ha='right')
+        
+            ax.text(.4, 9.75, 'Company', weight='bold', ha='left')
+            ax.text(2, 9.75, 'Value', weight='bold', ha='right')
+            ax.text(3, 9.75, 'Shares', weight='bold', ha='right')
+            ax.text(4, 9.75, 'Deposits', weight='bold', ha='right')
+            ax.text(5, 9.75, 'Withdrawals', weight='bold', ha='right')
+            ax.text(6, 9.75, 'Gains\nLosses', weight='bold', ha='right', va='bottom')
+        
+            for row in range(rows):
+                ax.plot(
+                    [0, cols + 1],
+                    [row -.5, row - .5],
+                    ls=':',
+                    lw='.5',
+                    c='grey'
+            )
+        
+            ax.plot([0, cols + 1], [9.5, 9.5], lw='.5', c='black')
+        
+            rect = patches.Rectangle(
+                (1.15, -.5),
+        
+                .9,  
+        
+                10,  
+        
+                ec='none',
+                fc='grey',
+                alpha=.2,
+                zorder=-1
+            )
+            ax.add_patch(rect)
+        
+            ax.axis('off')
+        
+            ax.set_title(
+        	'2024 Stock Exchange',
+        	loc='left',
+        	fontsize=18,
+        	weight='bold'
+        )
+        
+        pyscript.write('table', fig)
+
+        </py-script>
+
+        
+
         <!--audio controls-->
         
         <div class="container text-center">
