@@ -6,6 +6,8 @@ Overview: This is a school project for a paper trading app that I made called "G
 
 Details: General Banks features a charting library known as "Matplotlib", which it uses to track stock data.  Five pages make up the project in total.  However, only three of them (Home, Login, and Portfolio) are accessible, since the other two (Contact and Settings) are not.  The links used for page navigation are on the top right side of the navbar.  It is possible to move between the Home page and Login page by clicking the links.  As for the Portfolio page, you can go there from the Login page by pressing a button, and you can go back to the Login page by clicking a link on the Portfolio page.  A graph and a table can be found on the Portfolio page, and they are both set up to track stock data for 2024.  In addition, each page features an audio panel near the bottom that plays a unique music track.  The music is set to play automatically and will loop when the track reaches the end, but you can pause or mute it if you don't want to listen to it.
 
+*P.S.:  As of now, when opening GitHub Pages, the app is not set to automatically play the music for the Home page until you click on the Login link, but it will do so when going back by clicking on the Home link.  Also, the graph and table on the Portfolio page take about 25 seconds to load. 
+
 Technologies: html, css, py, pyscript
 
 Improvements: spend more time writing Python code, use Django to build a website, try out different charting libraries
